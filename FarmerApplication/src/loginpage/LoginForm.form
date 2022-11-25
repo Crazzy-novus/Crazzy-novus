@@ -147,9 +147,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="user_jTextField1">
-          <Properties>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="passward_jPasswordField1">
         </Component>

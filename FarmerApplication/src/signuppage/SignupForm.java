@@ -5,6 +5,13 @@
  */
 package signuppage;
 
+import databaseConnector.DatabaseConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import loginpage.LoginForm;
 
 /**
@@ -16,9 +23,13 @@ public class SignupForm extends javax.swing.JFrame {
     /**
      * Creates new form signupform
      */
-    public SignupForm() {
+    private int userId;
+    private DatabaseConnection db;
+    
+    public SignupForm(DatabaseConnection db) {
         initComponents();
-        
+        userId = 1;
+        this.db =  db;
     }
 
     /**
@@ -227,16 +238,15 @@ public class SignupForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(294, 294, 294)
+                .addGap(77, 77, 77)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(323, Short.MAX_VALUE))
+                .addContainerGap(540, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addGap(0, 62, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -260,6 +270,46 @@ public class SignupForm extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String name =  jTextField1.getText();
+        jTextField1.setText("");
+        String userName =  jTextField2.getText();
+        jTextField2.setText("");
+        String mailId =  jTextField3.getText();
+        jTextField3.setText("");
+        String phoneNumber =  jTextField4.getText();
+        jTextField4.setText("");
+        String password =  jPasswordField1.getText();
+        jPasswordField1.setText("");
+        int id =  userId;
+        
+        if(name != null && !name.isEmpty() && userName != null && !userName.isEmpty() && mailId !=null && !mailId.isEmpty() 
+                && phoneNumber !=null && !phoneNumber.isEmpty() 
+                && password !=null && !password.isEmpty()){
+            try{
+                Connection connection = db.getConnection();
+//                Statement statement = connection.createStatement();
+                String sqlQuery = "INSERT INTO `userdetails`(`name`, `username`, `mailid`, `phonenumber`, `password`, `userid`) VALUES (?, ?, ?, ?, ?, ?)";
+                PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+                preparedStatement.setString(1, name);
+                preparedStatement.setString(2, userName);
+                preparedStatement.setString(3, mailId);
+                preparedStatement.setString(4, phoneNumber);
+                preparedStatement.setString(5, password);
+                preparedStatement.setInt(6, id);
+                preparedStatement.execute();
+                this.userId+=1;
+                JFrame frame = new JFrame();
+                JOptionPane.showMessageDialog(frame,"User is successfully created","Success",JOptionPane.INFORMATION_MESSAGE);
+            }catch(Exception e){
+                JFrame frame = new JFrame();
+                JOptionPane.showMessageDialog(frame,"Unable to create new user","Error",JOptionPane.ERROR_MESSAGE);
+            }
+            
+        }
+        else{
+            JFrame frame = new JFrame();
+            JOptionPane.showMessageDialog(frame,"Please fill all fields!","Warning",JOptionPane.WARNING_MESSAGE);
+        }    
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

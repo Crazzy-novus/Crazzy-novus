@@ -4,6 +4,7 @@ package loginpage;
 
 import signuppage.SignupForm;
 import dashboard.MainMenu;
+import databaseConnector.DatabaseConnection;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,11 +23,15 @@ public class LoginForm extends javax.swing.JFrame {
      */
     
    
-    
-    public LoginForm() {
+    DatabaseConnection db;
+    public LoginForm(DatabaseConnection db) {
         initComponents();
-       }
+        this.db = db;
+    }
 
+    public LoginForm(){
+        initComponents();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -162,7 +167,7 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        SignupForm signup = new SignupForm(); 
+        SignupForm signup = new SignupForm(db); 
         signup.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -194,10 +199,12 @@ public class LoginForm extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        DatabaseConnection db = new DatabaseConnection();
+        db.start();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new LoginForm().setVisible(true);
+            new LoginForm(db).setVisible(true);
         });
     }
 

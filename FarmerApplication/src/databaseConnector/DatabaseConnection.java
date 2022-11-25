@@ -5,7 +5,7 @@
  */
 package databaseConnector;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.sql.*;
 /**
  *
@@ -19,7 +19,21 @@ public class DatabaseConnection {
         connection = null;
     }
     
-    public void start() throws IOException{
-        
+    public Connection getConnection(){
+        return connection;
+    }
+    
+    public void start(){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            connection =  DriverManager.getConnection("jdbc:mysql://localhost:3306/farmerApplication","root","");
+            if(connection == null){
+                System.out.println("Not connected");
+            } else{
+                System.out.println("connected");
+            }
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
