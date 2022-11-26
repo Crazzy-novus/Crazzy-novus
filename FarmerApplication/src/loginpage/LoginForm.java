@@ -4,6 +4,15 @@ package loginpage;
 
 import signuppage.SignupForm;
 import dashboard.MainMenu;
+import databaseConnector.DatabaseConnection;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,17 +25,27 @@ import dashboard.MainMenu;
  * @author Muthu Pandi
  */
 public class LoginForm extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form login
      */
     
    
-    
-    public LoginForm() {
+    DatabaseConnection db;
+    public LoginForm(DatabaseConnection db) {
         initComponents();
-       }
-
+        this.db = db;
+    }
+    public static int USERID;
+    
+    public static int getUserId()
+    {
+        return USERID;
+    }
+    public LoginForm(){
+        initComponents();
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,8 +60,8 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        user_jTextField1 = new javax.swing.JTextField();
-        passward_jPasswordField1 = new javax.swing.JPasswordField();
+        user_tf = new javax.swing.JTextField();
+        password_tf = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -67,8 +86,6 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel4.setText("Password:");
-
-        user_jTextField1.setOpaque(true);
 
         jButton1.setBackground(new java.awt.Color(134, 63, 243));
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
@@ -102,8 +119,8 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(user_jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                    .addComponent(passward_jPasswordField1))
+                    .addComponent(user_tf, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                    .addComponent(password_tf))
                 .addGap(27, 27, 27))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -129,11 +146,11 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(user_jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(user_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passward_jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
@@ -150,19 +167,48 @@ public class LoginForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-//        System.out.println("Date*********"+jTextField1.getText());
-       
-        //System.out.println(jPasswordField1.getText());
-        MainMenu home = new MainMenu();
-        home.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            // validation of login id and password
+            
+            String username = user_tf.getText();
+            String password = password_tf.getText();
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/uzhavan","root","");
+            Statement stmt = con.createStatement();
+            
+            //MySql query
+            
+            String sql = "SELECT * from user where username='"+username+"'and password='"+password+"'";
+            ResultSet rs = stmt.executeQuery(sql);
+            
+            
+            if(rs.next())
+            {
+                
+                MainMenu home = new MainMenu();
+                home.setVisible(true);
+                this.dispose();
+                String query =  "SELECT * from user";
+                ResultSet rs1 = stmt.executeQuery(sql);
+                rs1.next();
+                USERID = rs1.getInt(1);
+                System.out.println(USERID);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this,"Username or password wrong","Error",JOptionPane.ERROR_MESSAGE);
+            user_tf.setText("");
+            password_tf.setText("");
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, e);
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        SignupForm signup = new SignupForm(); 
+        SignupForm signup = new SignupForm(db); 
         signup.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -194,10 +240,12 @@ public class LoginForm extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        DatabaseConnection db = new DatabaseConnection();
+        db.start();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new LoginForm().setVisible(true);
+            new LoginForm(db).setVisible(true);
         });
     }
 
@@ -210,7 +258,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField passward_jPasswordField1;
-    private javax.swing.JTextField user_jTextField1;
+    private javax.swing.JPasswordField password_tf;
+    private javax.swing.JTextField user_tf;
     // End of variables declaration//GEN-END:variables
 }

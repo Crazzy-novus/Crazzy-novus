@@ -66,8 +66,8 @@
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="user_jTextField1" pref="191" max="32767" attributes="0"/>
-                      <Component id="passward_jPasswordField1" max="32767" attributes="0"/>
+                      <Component id="user_tf" pref="191" max="32767" attributes="0"/>
+                      <Component id="password_tf" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
@@ -102,12 +102,12 @@
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="user_jTextField1" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="user_tf" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="passward_jPasswordField1" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="password_tf" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="47" max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -146,12 +146,9 @@
             <Property name="text" type="java.lang.String" value="Password:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="user_jTextField1">
-          <Properties>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
+        <Component class="javax.swing.JTextField" name="user_tf">
         </Component>
-        <Component class="javax.swing.JPasswordField" name="passward_jPasswordField1">
+        <Component class="javax.swing.JPasswordField" name="password_tf">
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
