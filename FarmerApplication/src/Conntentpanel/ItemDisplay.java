@@ -4,13 +4,13 @@
  */
 package Conntentpanel;
 import dashboard.MainMenu;
-import static java.awt.Image.SCALE_SMOOTH;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import static java.awt.Image.SCALE_SMOOTH;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.Statement;
+//import java.sql.*;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 /**
  *
  * @author Durai
@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class ItemDisplay extends javax.swing.JPanel {
     public static productPanel p1 = new productPanel();
     public String instruction,modelno,minrate,maxrate;
-    public static int USERIDPRODUCT;
+    public  int USERIDPRODUCT;
     /**
      * Creates new form NewJPanel
      */
@@ -26,10 +26,7 @@ public class ItemDisplay extends javax.swing.JPanel {
         initComponents();
         
     }
-    public static int getProductUserid()
-    {
-        return USERIDPRODUCT;
-    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,19 +44,23 @@ public class ItemDisplay extends javax.swing.JPanel {
         description = new javax.swing.JLabel();
         action = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 51));
+        setBackground(new java.awt.Color(51, 255, 204));
 
-        photo.setBackground(new java.awt.Color(255, 204, 204));
         photo.setForeground(new java.awt.Color(255, 255, 204));
         photo.setText("jLabel1");
-        photo.setOpaque(true);
 
-        productname.setText("name");
+        productname.setBackground(new java.awt.Color(255, 255, 255));
+        productname.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
+        productname.setForeground(new java.awt.Color(181, 184, 190));
+        productname.setText("    name");
         productname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        productname.setOpaque(true);
 
         name.setEditable(false);
-        name.setBackground(new java.awt.Color(255, 255, 0));
-        name.setText("name");
+        name.setBackground(new java.awt.Color(255, 255, 255));
+        name.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
+        name.setForeground(new java.awt.Color(181, 184, 190));
+        name.setText("   name");
         name.setOpaque(true);
 
         jLabel2.setText("likes     :");
@@ -68,10 +69,20 @@ public class ItemDisplay extends javax.swing.JPanel {
         jLabel5.setText("10k");
         jLabel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        description.setText("description");
+        description.setBackground(new java.awt.Color(255, 255, 255));
+        description.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
+        description.setForeground(new java.awt.Color(181, 184, 190));
+        description.setText("     description");
+        description.setOpaque(true);
 
-        action.setText("get the product");
-        action.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        action.setBackground(new java.awt.Color(20, 22, 30));
+        action.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
+        action.setForeground(new java.awt.Color(255, 255, 255));
+        action.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/details (1).png"))); // NOI18N
+        action.setText("Product Details");
+        action.setBorder(null);
+        action.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        action.setIconTextGap(30);
         action.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actionActionPerformed(evt);
@@ -85,21 +96,22 @@ public class ItemDisplay extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(productname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(productname, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(14, 14, 14)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(photo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,9 +127,9 @@ public class ItemDisplay extends javax.swing.JPanel {
                 .addComponent(productname, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
     public static productPanel panel()
@@ -128,24 +140,17 @@ public class ItemDisplay extends javax.swing.JPanel {
         // TODO add your handling code here:
         //productPanel p1 = new productPanel();
        
-        try {
-            
-            String str = "SELECT * FROM     PRODUCT";
-            Connection con;
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/uzhavan","root","");
-            Statement stmt = con.createStatement();
+                   
             p1.modelname.setText(this.name.getText());
             p1.photo.setIcon(this.photo.getIcon());
             p1.description.setText(this.description.getText());
             p1.instruction.setText(this.instruction);
             p1.minrate.setText(this.minrate);
             p1.maxrate.setText(this.maxrate);
+            p1.USERPRODUCTID = this.USERIDPRODUCT;
             
             
-        } catch (SQLException ex) {
-            Logger.getLogger(ItemDisplay.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+       
         MainMenu.jTabbedPane1.add(p1);
         MainMenu.jTabbedPane1.setSelectedComponent(p1);
        

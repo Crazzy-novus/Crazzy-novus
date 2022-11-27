@@ -6,25 +6,28 @@ package Conntentpanel;
 
 import ChartFram.BillFrame;
 import dashboard.MainMenu;
-import Conntentpanel.ItemDisplay.*;
+//import Conntentpanel.ItemDisplay.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import Conntentpanel.ItemDisplay.*;
-import dashboard.MainMenu.*;
+
+//import dashboard.MainMenu.*;
 /**
  *
  * @author Durai
  */
 public class productPanel extends javax.swing.JPanel {
+    
     BillFrame ch = new BillFrame();
+    public  int USERPRODUCTID;
     /**
      * Creates new form productPanel
      */
     public productPanel() {
         initComponents();
+        
     }
 
     /**
@@ -56,18 +59,19 @@ public class productPanel extends javax.swing.JPanel {
         jSeparator1.setBackground(new java.awt.Color(51, 0, 51));
         jSeparator1.setOpaque(true);
 
-        modelname.setForeground(new java.awt.Color(181, 184, 142));
+        modelname.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         modelname.setText("        MODEL NO");
         modelname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(45, 5, 41));
         jLabel3.setText("       PRODUCT NAME");
         jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel3.setOpaque(true);
 
-        minrate.setForeground(new java.awt.Color(181, 184, 142));
+        minrate.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
+        minrate.setForeground(new java.awt.Color(45, 5, 41));
         minrate.setText("        MINIMUM RATE");
         minrate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
 
@@ -180,19 +184,19 @@ public class productPanel extends javax.swing.JPanel {
         
         try
         {
-            int id = ItemDisplay.getProductUserid();
+            
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/uzhavan","root","");
-            String sql = "SELECT name,phonenumber,city from user,product where product.user_id = user.user_id";
+            String sql = "SELECT name,phonenumber,emailid from user where  user.user_id = "+USERPRODUCTID;
             PreparedStatement stmt =con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             if(rs.next())
             {
-                ch.name.setText(rs.getString(1));
-                ch.phone.setText(rs.getString(2));
-                ch.address.setText(rs.getString(3));
-                ch.product.setText(this.modelname.getText());
-                ch.model.setText(this.modelname.getText());
-                ch.price.setText(this.maxrate.getText());
+                BillFrame.name.setText(rs.getString(1));
+                BillFrame.phone.setText(rs.getString(2));
+                BillFrame.address.setText(rs.getString(3));
+                BillFrame.product.setText(this.modelname.getText());
+                BillFrame.model.setText(this.modelname.getText());
+                BillFrame.price.setText(this.maxrate.getText());
                 ch.setVisible(true);
                // MainMenu.mainMenuform.setVisible(false);
             }

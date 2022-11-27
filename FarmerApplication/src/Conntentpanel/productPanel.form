@@ -110,8 +110,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="modelname">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8e" green="b8" red="b5" type="rgb"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Narrow" size="24" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="        MODEL NO"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -132,10 +132,10 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="1"/>
+          <Font name="Microsoft YaHei UI" size="24" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="33" type="rgb"/>
+          <Color blue="29" green="5" red="2d" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="       PRODUCT NAME"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -148,8 +148,11 @@
     </Component>
     <Component class="javax.swing.JLabel" name="minrate">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Microsoft JhengHei" size="24" style="1"/>
+        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8e" green="b8" red="b5" type="rgb"/>
+          <Color blue="29" green="5" red="2d" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="        MINIMUM RATE"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

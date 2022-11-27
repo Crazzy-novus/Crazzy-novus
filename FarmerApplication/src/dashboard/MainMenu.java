@@ -4,7 +4,7 @@ package dashboard;
 
 import java.awt.Image;
 import java.io.*;
-import static java.awt.Image.SCALE_SMOOTH;
+//import static java.awt.Image.SCALE_SMOOTH;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -14,11 +14,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import Conntentpanel.ItemDisplay;
-import static Conntentpanel.ItemDisplay.p1;
-import com.raven.swing.PanelItem;
+//import static Conntentpanel.ItemDisplay.p1;
+//import com.raven.swing.PanelItem;
 import java.awt.Color;
-import javax.swing.JButton;
-import javax.swing.table.DefaultTableModel;
+//import javax.swing.JButton;
+//import javax.swing.table.DefaultTableModel;
 import loginpage.LoginForm;
 
 /**
@@ -63,6 +63,7 @@ public class MainMenu extends javax.swing.JFrame {
                 a[i].minrate = rs.getString(5);
                 a[i].maxrate = rs.getString(6);
                 a[i].USERIDPRODUCT = rs.getInt(2);
+                //System.out.println(a[i].USERIDPRODUCT+ "this");
                 
                 i++;
             }
@@ -142,7 +143,7 @@ public class MainMenu extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         productname_tf = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        panelItem1 = new com.raven.swing.PanelItem();
+        panelItem1 = new Layout.PanelItem();
         jPanel21 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
@@ -556,7 +557,7 @@ public class MainMenu extends javax.swing.JFrame {
         home_jPanel.add(jTabbedPane1);
         jTabbedPane1.setBounds(300, 50, 1070, 720);
 
-        dashBoard_jPanel.setBackground(new java.awt.Color(101, 219, 176));
+        dashBoard_jPanel.setBackground(new java.awt.Color(28, 202, 139));
 
         jLabel5.setText("logo,home ");
 
@@ -598,8 +599,11 @@ public class MainMenu extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(20, 22, 30));
         jButton4.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("add new product");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/product (1).png"))); // NOI18N
+        jButton4.setText("add new");
         jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jButton4.setIconTextGap(70);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -972,7 +976,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField maxrate_t3;
     private javax.swing.JTextField minrate_t2;
     private javax.swing.JTextField model_t1;
-    private com.raven.swing.PanelItem panelItem1;
+    private Layout.PanelItem panelItem1;
     private javax.swing.JTextField productname_tf;
     private javax.swing.JPanel search_jPanel;
     // End of variables declaration//GEN-END:variables
