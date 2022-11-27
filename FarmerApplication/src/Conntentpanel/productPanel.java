@@ -4,7 +4,7 @@
  */
 package Conntentpanel;
 
-import ChartFram.NewJFrame1;
+import ChartFram.BillFrame;
 import dashboard.MainMenu;
 import Conntentpanel.ItemDisplay.*;
 import java.sql.Connection;
@@ -12,14 +12,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import loginpage.LoginForm;
+import Conntentpanel.ItemDisplay.*;
 import dashboard.MainMenu.*;
 /**
  *
  * @author Durai
  */
 public class productPanel extends javax.swing.JPanel {
-    NewJFrame1 ch = new NewJFrame1();
+    BillFrame ch = new BillFrame();
     /**
      * Creates new form productPanel
      */
@@ -180,7 +180,7 @@ public class productPanel extends javax.swing.JPanel {
         
         try
         {
-            int id = LoginForm.getUserId();
+            int id = ItemDisplay.getProductUserid();
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/uzhavan","root","");
             String sql = "SELECT name,phonenumber,city from user,product where product.user_id = user.user_id";
             PreparedStatement stmt =con.prepareStatement(sql);

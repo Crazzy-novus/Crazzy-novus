@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 public class ItemDisplay extends javax.swing.JPanel {
     public static productPanel p1 = new productPanel();
     public String instruction,modelno,minrate,maxrate;
+    public static int USERIDPRODUCT;
     /**
      * Creates new form NewJPanel
      */
@@ -25,7 +26,10 @@ public class ItemDisplay extends javax.swing.JPanel {
         initComponents();
         
     }
-
+    public static int getProductUserid()
+    {
+        return USERIDPRODUCT;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

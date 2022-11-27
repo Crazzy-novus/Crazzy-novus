@@ -62,6 +62,7 @@ public class MainMenu extends javax.swing.JFrame {
                 a[i].instruction = rs.getString(7);
                 a[i].minrate = rs.getString(5);
                 a[i].maxrate = rs.getString(6);
+                a[i].USERIDPRODUCT = rs.getInt(2);
                 
                 i++;
             }
