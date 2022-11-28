@@ -73,10 +73,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel4.setText("Password:");
 
-        user_jTextField1.setOpaque(true);
-
-        jButton1.setBackground(new java.awt.Color(134, 63, 243));
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,8 +81,7 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(56, 14, 189));
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
         jButton2.setText("SIGN UP");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
