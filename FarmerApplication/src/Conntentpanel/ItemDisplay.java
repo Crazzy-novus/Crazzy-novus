@@ -38,13 +38,12 @@ public class ItemDisplay extends javax.swing.JPanel {
 
         photo = new javax.swing.JLabel();
         productname = new javax.swing.JLabel();
-        name = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         description = new javax.swing.JLabel();
         action = new javax.swing.JButton();
+        name = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 255, 204));
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         photo.setForeground(new java.awt.Color(255, 255, 204));
         photo.setText("jLabel1");
@@ -52,27 +51,17 @@ public class ItemDisplay extends javax.swing.JPanel {
         productname.setBackground(new java.awt.Color(255, 255, 255));
         productname.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         productname.setForeground(new java.awt.Color(181, 184, 190));
+        productname.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/items (1).png"))); // NOI18N
         productname.setText("    name");
-        productname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        productname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 1, true));
         productname.setOpaque(true);
-
-        name.setEditable(false);
-        name.setBackground(new java.awt.Color(255, 255, 255));
-        name.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
-        name.setForeground(new java.awt.Color(181, 184, 190));
-        name.setText("   name");
-        name.setOpaque(true);
-
-        jLabel2.setText("likes     :");
-        jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        jLabel5.setText("10k");
-        jLabel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         description.setBackground(new java.awt.Color(255, 255, 255));
         description.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         description.setForeground(new java.awt.Color(181, 184, 190));
-        description.setText("     description");
+        description.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/details (2).png"))); // NOI18N
+        description.setText(" description");
+        description.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(199, 243, 226)));
         description.setOpaque(true);
 
         action.setBackground(new java.awt.Color(20, 22, 30));
@@ -89,10 +78,21 @@ public class ItemDisplay extends javax.swing.JPanel {
             }
         });
 
+        name.setBackground(new java.awt.Color(255, 255, 255));
+        name.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
+        name.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/owner.png"))); // NOI18N
+        name.setText("Name");
+        name.setIconTextGap(15);
+        name.setOpaque(true);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -100,28 +100,15 @@ public class ItemDisplay extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(productname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(action, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(productname, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -141,11 +128,11 @@ public class ItemDisplay extends javax.swing.JPanel {
         //productPanel p1 = new productPanel();
        
                    
-            p1.modelname.setText(this.name.getText());
+            p1.modelname_l.setText(this.name.getText());
             p1.photo.setIcon(this.photo.getIcon());
-            p1.description.setText(this.description.getText());
-            p1.instruction.setText(this.instruction);
-            p1.minrate.setText(this.minrate);
+            p1.description_l.setText(this.description.getText());
+            p1.instruction_l.setText(this.instruction);
+            p1.minrate_l.setText(this.minrate);
             p1.maxrate.setText(this.maxrate);
             p1.USERPRODUCTID = this.USERIDPRODUCT;
             
@@ -161,9 +148,7 @@ public class ItemDisplay extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JButton action;
     public javax.swing.JLabel description;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
-    public javax.swing.JTextField name;
+    public javax.swing.JLabel name;
     public javax.swing.JLabel photo;
     public javax.swing.JLabel productname;
     // End of variables declaration//GEN-END:variables

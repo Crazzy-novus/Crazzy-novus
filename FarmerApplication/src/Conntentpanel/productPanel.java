@@ -6,6 +6,7 @@ package Conntentpanel;
 
 import ChartFram.BillFrame;
 import dashboard.MainMenu;
+import java.awt.Color;
 //import Conntentpanel.ItemDisplay.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -41,15 +42,15 @@ public class productPanel extends javax.swing.JPanel {
 
         photo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        modelname = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        minrate = new javax.swing.JLabel();
+        modelname_l = new javax.swing.JLabel();
+        productNmae_l = new javax.swing.JLabel();
+        minrate_l = new javax.swing.JLabel();
         maxrate = new javax.swing.JLabel();
-        instruction = new javax.swing.JLabel();
-        description = new javax.swing.JLabel();
+        instruction_l = new javax.swing.JLabel();
+        description_l = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        placeOrder_b = new javax.swing.JButton();
+        Back_l = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1080, 689));
@@ -59,57 +60,71 @@ public class productPanel extends javax.swing.JPanel {
         jSeparator1.setBackground(new java.awt.Color(51, 0, 51));
         jSeparator1.setOpaque(true);
 
-        modelname.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
-        modelname.setText("        MODEL NO");
-        modelname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
+        modelname_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
+        modelname_l.setText("        MODEL NO");
+        modelname_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
+        modelname_l.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                modelname_lFocusGained(evt);
+            }
+        });
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(45, 5, 41));
-        jLabel3.setText("       PRODUCT NAME");
-        jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel3.setOpaque(true);
+        productNmae_l.setBackground(new java.awt.Color(255, 255, 255));
+        productNmae_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
+        productNmae_l.setForeground(new java.awt.Color(45, 5, 41));
+        productNmae_l.setText("       PRODUCT NAME");
+        productNmae_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 1, true));
+        productNmae_l.setOpaque(true);
 
-        minrate.setFont(new java.awt.Font("Microsoft JhengHei", 1, 24)); // NOI18N
-        minrate.setForeground(new java.awt.Color(45, 5, 41));
-        minrate.setText("        MINIMUM RATE");
-        minrate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
+        minrate_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
+        minrate_l.setForeground(new java.awt.Color(51, 0, 51));
+        minrate_l.setText("        MINIMUM RATE");
+        minrate_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
 
         maxrate.setBackground(new java.awt.Color(255, 255, 255));
-        maxrate.setForeground(new java.awt.Color(181, 184, 142));
+        maxrate.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
+        maxrate.setForeground(new java.awt.Color(0, 0, 51));
         maxrate.setText("      MAX RATE");
         maxrate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
 
-        instruction.setForeground(new java.awt.Color(181, 184, 142));
-        instruction.setText("     iNSRTUCTION");
-        instruction.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
+        instruction_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        instruction_l.setForeground(new java.awt.Color(51, 0, 51));
+        instruction_l.setText("     iNSRTUCTION");
+        instruction_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
 
-        description.setForeground(new java.awt.Color(181, 184, 142));
-        description.setText("        DESCRIPTION");
-        description.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        description_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        description_l.setForeground(new java.awt.Color(51, 0, 51));
+        description_l.setText("        DESCRIPTION");
+        description_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 1, true));
 
         jLabel11.setForeground(new java.awt.Color(181, 184, 142));
         jLabel11.setText("jLabel11");
         jLabel11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
 
-        jButton1.setBackground(new java.awt.Color(20, 22, 30));
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 255, 255));
-        jButton1.setText("place order");
-        jButton1.setBorder(null);
-        jButton1.setOpaque(true);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        placeOrder_b.setBackground(new java.awt.Color(20, 22, 30));
+        placeOrder_b.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        placeOrder_b.setForeground(new java.awt.Color(204, 255, 255));
+        placeOrder_b.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order (1).png"))); // NOI18N
+        placeOrder_b.setText("place order");
+        placeOrder_b.setBorder(null);
+        placeOrder_b.setIconTextGap(25);
+        placeOrder_b.setOpaque(true);
+        placeOrder_b.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                placeOrder_bActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(28, 202, 139));
-        jButton2.setText("go back");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Back_l.setBackground(new java.awt.Color(20, 22, 30));
+        Back_l.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Back_l.setForeground(new java.awt.Color(255, 255, 255));
+        Back_l.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back (1).png"))); // NOI18N
+        Back_l.setText("Back");
+        Back_l.setBorder(null);
+        Back_l.setIconTextGap(55);
+        Back_l.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Back_lActionPerformed(evt);
             }
         });
 
@@ -120,22 +135,22 @@ public class productPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(modelname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
-                    .addComponent(minrate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(modelname_l, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(productNmae_l, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+                    .addComponent(minrate_l, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(maxrate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(instruction, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(instruction_l, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(placeOrder_b, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
+                        .addComponent(Back_l, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(description_l, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
@@ -144,11 +159,11 @@ public class productPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(photo, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(modelname, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(modelname_l, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(productNmae_l, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(minrate, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(minrate_l, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(maxrate, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(152, 152, 152))
@@ -158,28 +173,28 @@ public class productPanel extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(description_l, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(instruction, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(instruction_l, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(placeOrder_b, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Back_l, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Back_lActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_lActionPerformed
         // TODO add your handling code here:
         photo.setText("hello");
         
         MainMenu.jTabbedPane1.remove(ItemDisplay.panel());
       
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Back_lActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void placeOrder_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placeOrder_bActionPerformed
         // TODO add your handling code here:
         
         try
@@ -194,8 +209,8 @@ public class productPanel extends javax.swing.JPanel {
                 BillFrame.name.setText(rs.getString(1));
                 BillFrame.phone.setText(rs.getString(2));
                 BillFrame.address.setText(rs.getString(3));
-                BillFrame.product.setText(this.modelname.getText());
-                BillFrame.model.setText(this.modelname.getText());
+                BillFrame.product.setText(this.modelname_l.getText());
+                BillFrame.model.setText(this.modelname_l.getText());
                 BillFrame.price.setText(this.maxrate.getText());
                 ch.setVisible(true);
                // MainMenu.mainMenuform.setVisible(false);
@@ -208,20 +223,25 @@ public class productPanel extends javax.swing.JPanel {
         }
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_placeOrder_bActionPerformed
+
+    private void modelname_lFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_modelname_lFocusGained
+        // TODO add your handling code here:
+         
+    }//GEN-LAST:event_modelname_lFocusGained
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JLabel description;
-    public javax.swing.JLabel instruction;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Back_l;
+    public javax.swing.JLabel description_l;
+    public javax.swing.JLabel instruction_l;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JLabel maxrate;
-    public javax.swing.JLabel minrate;
-    public javax.swing.JLabel modelname;
+    public javax.swing.JLabel minrate_l;
+    public javax.swing.JLabel modelname_l;
     public javax.swing.JLabel photo;
+    private javax.swing.JButton placeOrder_b;
+    private javax.swing.JLabel productNmae_l;
     // End of variables declaration//GEN-END:variables
 }

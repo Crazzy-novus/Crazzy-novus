@@ -160,7 +160,7 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGap(71, 71, 71))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 450, 530));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 450, 530));
 
         setSize(new java.awt.Dimension(1041, 647));
         setLocationRelativeTo(null);
