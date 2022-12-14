@@ -64,11 +64,10 @@ public class ItemDisplay extends javax.swing.JPanel {
         description.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(199, 243, 226)));
         description.setOpaque(true);
 
-        action.setBackground(new java.awt.Color(20, 22, 30));
+        action.setBackground(new java.awt.Color(51, 255, 204));
         action.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
-        action.setForeground(new java.awt.Color(255, 255, 255));
         action.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/details (1).png"))); // NOI18N
-        action.setText("Product Details");
+        action.setText("View more");
         action.setBorder(null);
         action.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         action.setIconTextGap(30);
