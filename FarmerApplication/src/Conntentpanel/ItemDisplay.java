@@ -44,6 +44,10 @@ public class ItemDisplay extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(51, 255, 204));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        setEnabled(false);
+        setMaximumSize(new java.awt.Dimension(327, 410));
+        setMinimumSize(new java.awt.Dimension(327, 410));
+        setRequestFocusEnabled(false);
 
         photo.setForeground(new java.awt.Color(255, 255, 204));
         photo.setText("jLabel1");
@@ -127,7 +131,7 @@ public class ItemDisplay extends javax.swing.JPanel {
         //productPanel p1 = new productPanel();
        
                    
-            p1.modelname_l.setText(this.name.getText());
+         /*   p1.modelname_l.setText(this.name.getText());
             p1.photo.setIcon(this.photo.getIcon());
             p1.description_l.setText(this.description.getText());
             p1.instruction_l.setText(this.instruction);
@@ -136,7 +140,7 @@ public class ItemDisplay extends javax.swing.JPanel {
             p1.USERPRODUCTID = this.USERIDPRODUCT;
             
             
-       
+       */
         MainMenu.jTabbedPane1.add(p1);
         MainMenu.jTabbedPane1.setSelectedComponent(p1);
        

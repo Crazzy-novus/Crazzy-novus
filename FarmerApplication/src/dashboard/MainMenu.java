@@ -222,7 +222,7 @@ public class MainMenu extends javax.swing.JFrame {
         jButton8.setBounds(1130, 0, 180, 50);
 
         home_jPanel.add(jPanel1);
-        jPanel1.setBounds(0, 0, 1390, 60);
+        jPanel1.setBounds(0, 60, 1390, 0);
 
         jPanel21.setBackground(new java.awt.Color(204, 255, 204));
         jPanel21.setLayout(null);
@@ -311,7 +311,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGap(214, 214, 214)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(427, Short.MAX_VALUE))
+                .addContainerGap(487, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("help", jPanel18);
@@ -326,7 +326,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 709, Short.MAX_VALUE)
+            .addGap(0, 769, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("policy", jPanel19);
@@ -341,7 +341,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 709, Short.MAX_VALUE)
+            .addGap(0, 769, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("settings", jPanel17);
@@ -368,9 +368,8 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel12.setText("Instruction       :");
 
         minrate_t2.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        minrate_t2.setForeground(new java.awt.Color(153, 153, 135));
         minrate_t2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        minrate_t2.setText("Minium fixed rate");
+        minrate_t2.setText("1,200rs");
         minrate_t2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         minrate_t2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -382,7 +381,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         model_t1.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        model_t1.setForeground(new java.awt.Color(153, 153, 153));
         model_t1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         model_t1.setText("AB2022VL0967");
         model_t1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -406,10 +404,9 @@ public class MainMenu extends javax.swing.JFrame {
 
         instruction_t4.setColumns(20);
         instruction_t4.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
-        instruction_t4.setForeground(new java.awt.Color(153, 153, 153));
         instruction_t4.setLineWrap(true);
         instruction_t4.setRows(5);
-        instruction_t4.setText("\n\n   Detailed instruction to handle the \n    product");
+        instruction_t4.setText("\nThis product can able to spray 1-acer within 20 minutes \nIt consumes one litre of pesticides for 1-acer\n");
         instruction_t4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         instruction_t4.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -423,9 +420,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         description_t5.setColumns(20);
         description_t5.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
-        description_t5.setForeground(new java.awt.Color(153, 153, 153));
         description_t5.setRows(5);
-        description_t5.setText("\n     Detailed description about the \n      product ");
+        description_t5.setText("\n     Detailed description about the \n      product \nIt uses GPS for capurating the field. It will accruately spray the pesticides");
         description_t5.setWrapStyleWord(true);
         description_t5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jScrollPane3.setViewportView(description_t5);
@@ -456,15 +452,15 @@ public class MainMenu extends javax.swing.JFrame {
         jRadioButton3.setFont(new java.awt.Font("Arial Narrow", 0, 20)); // NOI18N
         jRadioButton3.setText("no");
 
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WhatsApp Image 2022-12-14 at 20.52.24.jpg"))); // NOI18N
         img.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel14.setFont(new java.awt.Font("Microsoft YaHei", 1, 20)); // NOI18N
         jLabel14.setText("Max - Rate        :");
 
         maxrate_t3.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        maxrate_t3.setForeground(new java.awt.Color(153, 153, 153));
         maxrate_t3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        maxrate_t3.setText("Rate for 1-hour");
+        maxrate_t3.setText("1,200rs");
         maxrate_t3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         maxrate_t3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -624,7 +620,7 @@ public class MainMenu extends javax.swing.JFrame {
         jTabbedPane1.addTab("tab6", jScrollPane1);
 
         home_jPanel.add(jTabbedPane1);
-        jTabbedPane1.setBounds(300, 30, 1070, 740);
+        jTabbedPane1.setBounds(300, -30, 1070, 800);
 
         dashBoard_jPanel.setBackground(new java.awt.Color(28, 202, 139));
 
@@ -763,7 +759,7 @@ public class MainMenu extends javax.swing.JFrame {
             else
             {
           
-                String sql = "";
+                String sql = "insert into product(modelnumber,photo,minimumrate,maxrate,instructions,Descriptions) values(?,?,?,?,?,?)";
                 if("Engine".equals(product))
                 {
                      sql = "insert into product(modelnumber,photo,minimumrate,maxrate,instructions,Descriptions,user_id) values(?,?,?,?,?,?,?)";
@@ -809,7 +805,7 @@ public class MainMenu extends javax.swing.JFrame {
                             ps.setString(4, minrate_t2.getText());
                             ps.setString(5,instruction_t4.getText());
                             ps.setString(6,description_t5.getText());
-                            ps.setInt(7, LoginForm.getUserId());
+                            //ps.setInt(7, 1);
                             ps.executeUpdate();
                             n=0;
                             JOptionPane.showMessageDialog(null, "data inserted");

@@ -48,58 +48,70 @@ public class productPanel extends javax.swing.JPanel {
         maxrate = new javax.swing.JLabel();
         instruction_l = new javax.swing.JLabel();
         description_l = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         placeOrder_b = new javax.swing.JButton();
         Back_l = new javax.swing.JButton();
+        description_l1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1080, 689));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        photo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WhatsApp Image 2022-12-14 at 20.52.24.jpg"))); // NOI18N
         photo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        add(photo, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 6, 309, -1));
 
         jSeparator1.setBackground(new java.awt.Color(51, 0, 51));
         jSeparator1.setOpaque(true);
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 6, 3, 699));
 
         modelname_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
-        modelname_l.setText("        MODEL NO");
+        modelname_l.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        modelname_l.setText("SVE15127CNB");
         modelname_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
         modelname_l.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 modelname_lFocusGained(evt);
             }
         });
+        add(modelname_l, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 204, 407, 76));
 
         productNmae_l.setBackground(new java.awt.Color(255, 255, 255));
         productNmae_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
         productNmae_l.setForeground(new java.awt.Color(45, 5, 41));
-        productNmae_l.setText("       PRODUCT NAME");
+        productNmae_l.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        productNmae_l.setText("Spray Drone");
         productNmae_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 1, true));
         productNmae_l.setOpaque(true);
+        add(productNmae_l, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 298, 407, 70));
 
         minrate_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
         minrate_l.setForeground(new java.awt.Color(51, 0, 51));
-        minrate_l.setText("        MINIMUM RATE");
+        minrate_l.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minrate_l.setText("Starts 1,000rs");
         minrate_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
+        add(minrate_l, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 386, 407, 73));
 
         maxrate.setBackground(new java.awt.Color(255, 255, 255));
         maxrate.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
         maxrate.setForeground(new java.awt.Color(0, 0, 51));
-        maxrate.setText("      MAX RATE");
+        maxrate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        maxrate.setText(" max 4,000 rs");
         maxrate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
+        add(maxrate, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 477, 407, 82));
 
         instruction_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         instruction_l.setForeground(new java.awt.Color(51, 0, 51));
-        instruction_l.setText("     iNSRTUCTION");
-        instruction_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
+        instruction_l.setText("Skilled drone handler is not needed. It fully automated drone");
+        add(instruction_l, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 578, 70));
 
         description_l.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         description_l.setForeground(new java.awt.Color(51, 0, 51));
-        description_l.setText("        DESCRIPTION");
-        description_l.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 1, true));
-
-        jLabel11.setForeground(new java.awt.Color(181, 184, 142));
-        jLabel11.setText("jLabel11");
-        jLabel11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(199, 243, 226), 2, true));
+        description_l.setText("This product can able to spray 1-acer within 20 minutes ");
+        add(description_l, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 578, 54));
 
         placeOrder_b.setBackground(new java.awt.Color(20, 22, 30));
         placeOrder_b.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -114,6 +126,7 @@ public class productPanel extends javax.swing.JPanel {
                 placeOrder_bActionPerformed(evt);
             }
         });
+        add(placeOrder_b, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 593, 203, 54));
 
         Back_l.setBackground(new java.awt.Color(20, 22, 30));
         Back_l.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -127,63 +140,26 @@ public class productPanel extends javax.swing.JPanel {
                 Back_lActionPerformed(evt);
             }
         });
+        add(Back_l, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 593, 182, 54));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(modelname_l, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(productNmae_l, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
-                    .addComponent(minrate_l, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(maxrate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(instruction_l, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(placeOrder_b, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
-                        .addComponent(Back_l, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(description_l, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(48, 48, 48))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(photo, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(modelname_l, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(productNmae_l, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(minrate_l, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(maxrate, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(152, 152, 152))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator1)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(description_l, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(instruction_l, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(placeOrder_b, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Back_l, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        description_l1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        description_l1.setForeground(new java.awt.Color(51, 0, 51));
+        description_l1.setText("It consumes one litre of pesticides for 1-acer");
+        add(description_l1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 578, 54));
+
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 570, 110));
+
+        jLabel2.setFont(new java.awt.Font("Microsoft YaHei", 0, 18)); // NOI18N
+        jLabel2.setText("It uses GPS for capurating the field. It will accruately spray the pesticides");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 620, 90));
+
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 620, 90));
+
+        jLabel4.setFont(new java.awt.Font("Microsoft YaHei", 1, 24)); // NOI18N
+        jLabel4.setText("Discription");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 210, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back_lActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_lActionPerformed
@@ -234,8 +210,12 @@ public class productPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back_l;
     public javax.swing.JLabel description_l;
+    public javax.swing.JLabel description_l1;
     public javax.swing.JLabel instruction_l;
-    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JLabel maxrate;
     public javax.swing.JLabel minrate_l;
