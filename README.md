@@ -1,4 +1,4 @@
-<h2 align="left">Hi 👋! My name is Durai Vignesh and I'm a GDSC Lead for 2023-2024 at Mepoc Schlenk Engineering college</h2>
+<h2 align="left">Hi 👋! My name is Durai Vignesh and I'm a GDSC Lead for 2023-2024 at Mepco Schlenk Engineering college</h2>
 
 ###
 
