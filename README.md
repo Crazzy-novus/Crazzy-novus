@@ -1,6 +1,15 @@
-<h2 align="left">Hi 👋! My name is Durai Vignesh and I'm a GDSC Lead for 2023-2024 at Mepco Schlenk Engineering college</h2>
+<h1 align="center">👋 Hi, I'm <a href="https://www.linkedin.com/in/jigar-sable/" target="_blank"> Durai Vignesh</a> I'm a GDSC Lead for 2023-2024 at Mepco Schlenk Engineering college</h1>
+<h3 align="center"> <img src="https://readme-typing-svg.herokuapp.com?color=0357F7&lines=Full+Stack+Developer+%3A)" /> </h3>
 
-###
+
+- 🌱 Learning Never Stops 🚀
+
+- 💬 Ask me about **Web Development, Java, DBMS, MySQL, Application Development**
+
+- 👨‍💻 Check out my personal portfolio : **<a href="#" target="_blank">Portfolio</a>**
+
+- 😄 Pronouns: He/His
+
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Crazzy-novus&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph"  />
